@@ -1,10 +1,11 @@
 ---
+const { title, description, id } = Astro.props;
 ---
 
 <details>
-  <summary>{##TITLE##}</summary>
-  <p>{##DESCRIPTION##}</p>
-  <a href={`/foundations/${##ID##}`}>
+  <summary>{title}</summary>
+  <p>{description}</p>
+  <a href={`/foundations/${id}`}>
     Find out how we put this in practice
   </a>
 </details>
@@ -54,13 +55,13 @@
     background-color: var(--color-primary);
   }
 
-  details[open]summary {
+  details[open] summary {
     border-bottom: solid 1px var(--color-black);
     padding-bottom: var(--sp-s);
     margin-bottom: var(--sp-s);
   }
 
-  details[open]summary::after {
+  details[open] summary::after {
     background-image: url(../assets/min.svg);
   }
 </style>
