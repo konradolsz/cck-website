@@ -1,0 +1,21 @@
+---
+import Markdown from "../../layouts/Markdown.astro";
+
+export async function getStaticPaths() {
+
+}
+
+---
+
+<Markdown>
+  <a href="/#foundations">Foundations</a>
+  <h2><span>{##TITLE##}</span></h2>
+  ##CONTENT##
+</Markdown>
+
+<style>
+  a {
+    display: block;
+    margin-bottom: var(--sp-m);
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+import Markdown from "../../layouts/Markdown.astro";
+
+export async function getStaticPaths() {
+
+}
+
+---
+
+<Markdown>
+  <div slot="top">
+    <a href="/#workshops">Workshops</a>
+    <h1><span>{##TITLE##}</span></h1>
+  </div>
+
+  ##CONTENT##
+
+  <div slot="sidebar">
+    <img
+      width="300"
+      height="300"
+      src={##IMAGE##}
+      alt="workshop image"
+      class="image"
+    />
+  </div>
+</Markdown>
+
+<style>
+  a {
+    display: block;
+    margin-bottom: var(--sp-m);
+  }
+</style>

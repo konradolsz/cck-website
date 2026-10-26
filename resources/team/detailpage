@@ -1,0 +1,33 @@
+---
+import Markdown from "../../layouts/Markdown.astro";
+
+export async function getStaticPaths() {
+
+}
+
+---
+
+<Markdown>
+  <div slot="top">
+    <a href="/#team">Team</a>
+    <h2><span>{##NAME##}</span></h2>
+  </div>
+  ##CONTENT##
+  <div slot="sidebar" class="profile">
+    <img width="300" height="300" src={##PIC##} alt="" class="image" />
+  </div>
+</Markdown>
+
+<style>
+  a {
+    display: block;
+    margin-bottom: var(--sp-m);
+  }
+
+  .profile {
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+    gap: var(--sp-xs);
+  }
+</style>
