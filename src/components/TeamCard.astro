@@ -7,6 +7,8 @@ interface Props {
 
 const { member } = Astro.props;
 const { name, function: role, bio, pic } = member.data;
+// Challenge 6: the fourth digit of the code is revealed on hover of Martin's picture
+const secret = member.id === "martin" ? "4th digit: 4" : null;
 ---
 
 <article>
@@ -19,6 +21,7 @@ const { name, function: role, bio, pic } = member.data;
         alt={`Profile pic of ${name}`}
       />
     </div>
+    {secret && <span class="secret">{secret}</span>}
   </div>
   <p class="name"><a href={`/team/${member.id}`}>{name}</a></p>
   <p class="function">{role}</p>
@@ -57,6 +60,22 @@ const { name, function: role, bio, pic } = member.data;
     grid-row: 1 / span 2;
     filter: drop-shadow(var(--color-text) 0.7rem 0.3rem);
     align-self: start;
+    position: relative;
+  }
+
+  .secret {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    font-weight: bolder;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .picwrap:hover .secret {
+    opacity: 1;
   }
 
   .profilepic {
